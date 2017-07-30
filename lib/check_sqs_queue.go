@@ -50,9 +50,9 @@ func queueLength(queueName string, region, account string, sqsClient *sqs.SQS) (
 	}
 
 	return queueSize, err
-	// fmt.Println(queueSize)
-	// testLen := rand.Intn(30)
-	// return testLen, err
+
+	// queueSize = rand.Intn(30)
+	// return queueSize, err
 }
 
 func contain(array []string, match string) bool {
@@ -72,11 +72,11 @@ func runCheck(queue string, check CheckSpec, config *Config, sqs *sqs.SQS) {
 	}
 	// fmt.Printf("QUEUE: %s, LEN: %d, CRIT: %d, WARN: %d \n", queue, length, check.CriticalThreashold, check.WarningThreashold)
 	if length > check.CriticalThreashold {
-		fmt.Printf("[CRITICAL] %s queue contain %d messages", queue, length)
+		fmt.Printf("[CRITICAL] %s queue contain %d messages\n", queue, length)
 		return
 	}
 	if length > check.WarningThreashold {
-		fmt.Printf("[WARNING] %s queue contain %d messages", queue, length)
+		fmt.Printf("[WARNING] %s queue contain %d messages\n", queue, length)
 		return
 	}
 }
