@@ -1,0 +1,32 @@
+{
+    "aws_access_id": "",
+    "aws_access_secret": "",
+    "aws_region": "",
+    "aws_account_num": "",
+    "queues": [
+        "test_devops_makelaars",
+        "test_devops_new_houses",
+        "test_devops_edited_houses",
+        "test_devops_removed_houses",
+        "test_devops_stats_phone_clicks",
+        "test_devops_stats_facebook_clicks"
+    ],
+    "default_check_spec": {
+        "warning_threashold": 25,
+        "critical_threashold": 30,
+        "contact_group": ["team3"]
+    },
+    "custom_checks": [
+        {
+            "queues": ["test_devops_makelaars", "test_devops_new_houses"],
+            "warning_threashold": 10,
+            "critical_threashold": 11,
+            "contact_group": ["team1", "team2"]
+        }
+    ],
+    "contact_groups": [
+        { "team1": ["team1@example.com"] },
+        { "team2": ["team2@example.com"] },
+        { "team3": ["team3@example.com"] }
+    ]
+}
